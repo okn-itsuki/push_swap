@@ -6,7 +6,7 @@
 #    By: iokuno <iokuno@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/22 20:49:29 by iokuno            #+#    #+#              #
-#    Updated: 2025/09/29 21:17:04 by iokuno           ###   ########.fr        #
+#    Updated: 2025/10/01 14:37:58 by iokuno           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRCFILE		= main.c \
 		sort/rotate.c \
 		sort/swap.c \
 		stack_op/case_five.c \
+		stack_op/case_four.c \
 		stack_op/case_three.c \
 		stack_op/case_two.c \
 		stack_op/general_sort.c \
@@ -46,7 +47,8 @@ SRCFILE		= main.c \
 		utility/handle_error.c \
 		utility/init_stack.c \
 		utility/is_sorted.c \
-		utility/stack_size.c
+		utility/stack_size.c \
+		utility/move_to_top.c
 
 SRCS		= $(addprefix $(SRCDIR)/, $(SRCFILE))
 OBJS		= $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRCS))

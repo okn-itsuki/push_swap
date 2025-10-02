@@ -1,44 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   general_sort.c                                     :+:      :+:    :+:   */
+/*   move_to_top.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iokuno <iokuno@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/28 21:13:09 by iokuno            #+#    #+#             */
-/*   Updated: 2025/10/02 21:54:31 by iokuno           ###   ########.fr       */
+/*   Created: 2025/10/01 14:31:20 by iokuno            #+#    #+#             */
+/*   Updated: 2025/10/02 21:55:46 by iokuno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pusw.h"
 
-void	general_sort(t_stack **stack_a, t_stack **stack_b)
+static int	get_pos(t_stack *stack, int target_idx)
 {
-	int	size;
-	int	current_idx;
-	int	max_bit;
-	int	i;
-	int	j;
+	int	pos;
+
+	pos = 0;
+	while (stack)
+	{
+		if (stack->index == target_idx)
+			return (pos);
+		stack = stack->next;
+		pos++;
+	}
+	return (-1);
+}
+
+void	move_to_top(t_stack **stack_a, int target_idx)
+{
+	int		pos;
+	size_t	size;
 
 	size = stack_size(*stack_a);
-	max_bit = 0;
-	while ((size - 1) >> max_bit != 0)
-		max_bit++;
-	i = 0;
-	while (i < max_bit)
+	pos = get_pos(*stack_a, target_idx);
+	if (pos <= (int)size / 2)
 	{
-		j = 0;
-		while (j < size)
-		{
-			current_idx = (*stack_a)->index;
-			if (((current_idx >> i) & 1) == 0)
-				pb(stack_a, stack_b);
-			else
-				ra(stack_a);
-			j++;
-		}
-		while (stack_size(*stack_b) != 0)
-			pa(stack_a, stack_a);
-		i++;
+		while (pos-- > 0)
+			ra(stack_a);
+	}
+	else
+	{
+		while (pos++ < (int)size)
+			rra(stack_a);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: iokuno <iokuno@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 16:47:11 by iokuno            #+#    #+#             */
-/*   Updated: 2025/09/28 23:10:40 by iokuno           ###   ########.fr       */
+/*   Updated: 2025/10/01 14:46:40 by iokuno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	case_three(t_stack **stack_a)
 		ra(stack_a);
 	else if (n2 > n1 && n2 > n3)
 		rra(stack_a);
-	if ((*stack_a)->content > (*stack_a)->next->content)
+	if (n1 > n3)
 		sa(stack_a);
 }
 

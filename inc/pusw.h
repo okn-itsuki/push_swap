@@ -6,7 +6,7 @@
 /*   By: iokuno <iokuno@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 20:49:57 by iokuno            #+#    #+#             */
-/*   Updated: 2025/09/29 21:35:33 by iokuno           ###   ########.fr       */
+/*   Updated: 2025/10/01 16:53:49 by iokuno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_stack
 {
 	int				content;
 	int				index;
+	struct s_stack	*prev;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -35,9 +36,11 @@ int					ft_atoi_cheak(const char *nptr);
 void				init_stack(t_stack **stack_a, int ac, char **av);
 void				assign_index(t_stack **stack);
 int					stack_size(t_stack *stack);
+void				move_to_top(t_stack **stack_a, int target_idx);
 
 void				case_two(t_stack **stack_a);
 void				case_three(t_stack **stack_a);
+void				case_four(t_stack **stack_a, t_stack **stack_b);
 void				case_five(t_stack **stack_a, t_stack **stack_b);
 void				general_sort(t_stack **stack_a, t_stack **stack_b);
 
