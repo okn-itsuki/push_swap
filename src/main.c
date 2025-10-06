@@ -6,7 +6,7 @@
 /*   By: iokuno <iokuno@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 21:08:12 by iokuno            #+#    #+#             */
-/*   Updated: 2025/10/02 21:58:36 by iokuno           ###   ########.fr       */
+/*   Updated: 2025/10/03 21:40:34 by iokuno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	print_stack(t_stack *stack)
 {
 	while (stack)
 	{
-		dprintf(1, "%d : %d\n", stack->index, stack->content);
+		dprintf(1, "index %d : content %d\n", stack->index, stack->content);
 		stack = stack->next;
 	}
 }
@@ -26,6 +26,8 @@ static void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	int	size;
 
 	size = stack_size(*stack_a);
+	// printf("--befor---------------------------\n");
+	// print_stack(*stack_a);
 	if (size == 2)
 		case_two(stack_a);
 	else if (size == 3)
@@ -36,7 +38,8 @@ static void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 		case_five(stack_a, stack_b);
 	else
 		general_sort(stack_a, stack_b);
-	print_stack(*stack_a);
+	// printf("--after---------------------------\n");
+	// print_stack(*stack_a);
 }
 
 int	main(int ac, char **av)

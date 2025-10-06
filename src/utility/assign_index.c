@@ -6,7 +6,7 @@
 /*   By: iokuno <iokuno@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 22:58:03 by iokuno            #+#    #+#             */
-/*   Updated: 2025/10/01 14:32:05 by iokuno           ###   ########.fr       */
+/*   Updated: 2025/10/03 21:36:17 by iokuno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	assign_index(t_stack **stack)
 	t_stack	*scanner;
 	int		rank;
 
+	if (!stack || !*stack)
+		return ;
 	current = *stack;
 	while (current)
 	{

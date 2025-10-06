@@ -1,0 +1,14 @@
+==297290== Memcheck, a memory error detector
+==297290== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==297290== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==297290== Command: ./push_swap 912 797 -67 -803 -284 -143 -892 -226 945 724 -965 -338 329 214 78 -599 -6 479 -267 361 -131 -320 717 936 121 -991 631 -179 242 295 -911 -698 18 -582 -471 -676 -548 -526 -139 281 396 451 -723 -601 750 359 499 -211 457 716 -525 853 752 110 -281 -12 425 455 430 703 160 657 94 897 -85 -668 -820 779 -41 -839 -379 617 267 -968 -222 -545 -234 -79 -417 814 664 671 274 37 793 -745 -883 -607 475 -69 841 -80 -218 -808 -492 489 -546 -50 -243 -507
+==297290== 
+==297290== 
+==297290== HEAP SUMMARY:
+==297290==     in use at exit: 0 bytes in 0 blocks
+==297290==   total heap usage: 100 allocs, 100 frees, 2,400 bytes allocated
+==297290== 
+==297290== All heap blocks were freed -- no leaks are possible
+==297290== 
+==297290== For lists of detected and suppressed errors, rerun with: -s
+==297290== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

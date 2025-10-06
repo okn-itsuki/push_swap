@@ -6,7 +6,7 @@
 /*   By: iokuno <iokuno@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 20:49:57 by iokuno            #+#    #+#             */
-/*   Updated: 2025/10/01 16:53:49 by iokuno           ###   ########.fr       */
+/*   Updated: 2025/10/03 21:11:28 by iokuno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,8 @@ void				rr(t_stack **stack_a, t_stack **stack_b);
 void				rra(t_stack **stack_a);
 void				rrb(t_stack **stack_b);
 void				rrr(t_stack **stack_a, t_stack **stack_b);
+
+// debug
+void				print_stack(t_stack *stack);
 
 #endif

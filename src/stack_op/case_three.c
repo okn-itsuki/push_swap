@@ -6,7 +6,7 @@
 /*   By: iokuno <iokuno@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 16:47:11 by iokuno            #+#    #+#             */
-/*   Updated: 2025/10/01 14:46:40 by iokuno           ###   ########.fr       */
+/*   Updated: 2025/10/06 12:06:11 by iokuno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,37 +18,25 @@ void	case_three(t_stack **stack_a)
 	int	n2;
 	int	n3;
 
+	if (!stack_a || !*stack_a || !(*stack_a)->next || !(*stack_a)->next->next)
+		return ;
 	n1 = (*stack_a)->content;
 	n2 = (*stack_a)->next->content;
 	n3 = (*stack_a)->next->next->content;
-	if (n1 > n2 && n1 > n3)
-		ra(stack_a);
-	else if (n2 > n1 && n2 > n3)
-		rra(stack_a);
-	if (n1 > n3)
+	if (n1 > n2 && n2 < n3 && n1 < n3)
 		sa(stack_a);
+	else if (n1 > n2 && n2 > n3)
+	{
+		sa(stack_a);
+		rra(stack_a);
+	}
+	else if (n1 > n2 && n2 < n3 && n1 > n3)
+		ra(stack_a);
+	else if (n1 < n2 && n2 > n3 && n1 < n3)
+	{
+		sa(stack_a);
+		ra(stack_a);
+	}
+	else if (n1 < n2 && n2 > n3 && n1 > n3)
+		rra(stack_a);
 }
-
-/*
-## アルゴリズムの手順 🧠
-まず、スタックの先頭(top), 2番目(middle), 3番目(bottom) の3つの値を取得します。
-
-最大値が先頭にある場合 (例: 3 1 2):
-
-ra を実行して、最大値を一番下に移動させます。
-
-最大値が2番目にある場合 (例: 1 3 2):
-
-rra を実行して、一番下の要素を先頭に持ってきます。
-
-最後に、先頭の2つの要素がまだ逆順であれば (例: 2 1 3):
-
-sa を実行して入れ替えます。
-
-初期状態	最大値の位置	1回目の操作	操作後の状態	最後のsa?	最終状態
-2 1 3		3番目			(nul)	2 1 3			必要		1 2 3
-3 1 2		先頭			ra		1 2 3			不要		1 2 3
-1 3 2		2番目			rra		2 1 3			必要		1 2 3
-2 3 1		2番目			rra		1 2 3			不要		1 2 3
-3 2 1		先頭			ra		2 1 3			必要		1 2 3
-*/

@@ -6,7 +6,7 @@
 /*   By: iokuno <iokuno@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 21:31:21 by iokuno            #+#    #+#             */
-/*   Updated: 2025/10/01 16:10:23 by iokuno           ###   ########.fr       */
+/*   Updated: 2025/10/02 22:01:19 by iokuno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static void	rotate(t_stack **stack_n)
 
 void	ra(t_stack **stack_a)
 {
-	//	dprintf(1, "cheak_ra\n");
 	rotate(stack_a);
 	write(STDOUT_FILENO, "ra\n", 3);
 }

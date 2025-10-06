@@ -6,7 +6,7 @@
 /*   By: iokuno <iokuno@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 17:14:35 by iokuno            #+#    #+#             */
-/*   Updated: 2025/09/29 21:56:36 by iokuno           ###   ########.fr       */
+/*   Updated: 2025/10/03 21:40:35 by iokuno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	init_stack(t_stack **stack_a, int ac, char **av)
 {
 	int		i;
 	t_stack	*current;
-	long	num;
+	int		num;
 
 	i = 1;
 	while (i < ac)
@@ -46,11 +46,11 @@ void	init_stack(t_stack **stack_a, int ac, char **av)
 		current = *stack_a;
 		while (current)
 		{
-			if (current->content == (int)num)
+			if (current->content == num)
 				handle_error();
 			current = current->next;
 		}
-		append_node(stack_a, (int)num);
+		append_node(stack_a, num);
 		i++;
 	}
 }

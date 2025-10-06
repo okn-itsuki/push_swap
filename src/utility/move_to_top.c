@@ -6,7 +6,7 @@
 /*   By: iokuno <iokuno@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:31:20 by iokuno            #+#    #+#             */
-/*   Updated: 2025/10/02 21:55:46 by iokuno           ###   ########.fr       */
+/*   Updated: 2025/10/06 12:15:57 by iokuno           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,25 @@ static int	get_pos(t_stack *stack, int target_idx)
 
 void	move_to_top(t_stack **stack_a, int target_idx)
 {
-	int		pos;
-	size_t	size;
+	int	pos;
+	int	size;
 
 	size = stack_size(*stack_a);
 	pos = get_pos(*stack_a, target_idx);
-	if (pos <= (int)size / 2)
+	if (pos <= size / 2)
 	{
-		while (pos-- > 0)
+		while (pos > 0)
+		{
 			ra(stack_a);
+			pos--;
+		}
 	}
 	else
 	{
-		while (pos++ < (int)size)
+		while (pos < size)
+		{
 			rra(stack_a);
+			pos++;
+		}
 	}
 }
